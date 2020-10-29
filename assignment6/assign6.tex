@@ -251,12 +251,12 @@ To find $\vec{c}$,performing row reduction in augmented matrix as follows
 \begin{align*}
     \myvec{\frac{7}{50}&-\frac{124}{50}&-7\\9&12&\frac{57}{50}\\12&16&\frac{76}{50}}\xleftrightarrow[R_1\leftarrow \frac{50}{7}R_1]{R_3\leftarrow R_3-\frac{4}{3}R_2}\myvec{1&-\frac{124}{7}&-50\\9&12&\frac{57}{50}\\0&0&0}\\
     \xleftrightarrow{R_2\leftarrow R_2-9R_1}\myvec{1&-\frac{124}{7}&-50\\0&\frac{1200}{7}&\frac{22557}{50}\\0&0&0}\\
-    \xleftrightarrow{R_2\leftarrow\frac{7}{1200}R_2}\myvec{1&-\frac{124}{7}&-50\\0&1&2.63165\\0&0&0}\\
-    \xleftrightarrow{R_1\leftarrow R_1+\frac{124}{7}R_2}\myvec{1&0&-3.3822\\0&1&2.63165\\0&0&0}
+    \xleftrightarrow{R_2\leftarrow\frac{7}{1200}R_2}\myvec{1&-\frac{124}{7}&-50\\0&1&\frac{52633}{20000}\\0&0&0}\\
+    \xleftrightarrow{R_1\leftarrow R_1+\frac{124}{7}R_2}\myvec{1&0&-\frac{16911}{5000}\\0&1&\frac{52633}{20000}\\0&0&0}
 \end{align*}
 Thus
 \begin{align}
-    \vec{c} = \myvec{-3.3822\\2.63165}
+    \vec{c} = \myvec{-\frac{16911}{5000}\\\frac{52633}{20000}}
 \end{align}
 \renewcommand{\thefigure}{\arabic{figure}}
   \begin{figure}[!ht]
