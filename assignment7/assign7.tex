@@ -1,0 +1,339 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{gensymb}
+%\doublespacing
+\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math,backgrounds}
+\usepackage{caption}
+\usepackage{listings}
+    \usepackage{color}                          %%
+    \usepackage{array}                          %%
+    \usepackage{longtable}                      %%
+    \usepackage{calc}                           %%
+    \usepackage{multirow}                       %%
+    \usepackage{hhline}                         %%
+    \usepackage{ifthen}                         %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+\begin{document}
+%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Matrix Theory(EE5609) Assignment 7}
+\author{Anshum Agrawal \\ Roll No- AI20MTECH11006}
+%
+\maketitle
+\newpage
+%\tableofcontents
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+%\begin{abstract}
+%%\boldmath
+\begin{abstract}
+   This document deals with QR decomposition and Singular Value Decomposition.
+\end{abstract}
+%
+Download latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/anshum0302/EE5609/blob/master/assignment7/assign7.tex
+\end{lstlisting}
+%
+\section{\textbf{PROBLEM STATEMENT}}
+1. Find the QR decomposition of $\vec{V} = \myvec{9&12\\12&16}$
+
+2. Find the vertex $\vec{c}$ of the parabola
+\begin{align}
+    9x^2+24xy+16y^2-4y-x+7=0\label{eq1}
+\end{align}
+using SVD and verify the result using least squares. 
+\section{\textbf{Solution}}
+\subsection{QR decomposition of $\vec{V}$}
+Let $\vec{v_1}$ and $\vec{v_2}$ be the column vectors of matrix $\vec{V}$.Then
+\begin{align}
+    \vec{v_1} = \myvec{9\\12}\label{eq2}\\
+    \vec{v_2} = \myvec{12\\16}\label{eq3}
+\end{align}
+We can express column vectors of $\vec{V}$ as
+\begin{align}
+    \vec{v_1} &= k_1\vec{u_1}\label{eq4}\\
+    \vec{v_2} &= r_1\vec{u_1}+k_2\vec{u_2}\label{eq5}
+\end{align}
+where
+\begin{align}
+    k_1 &= \norm{\vec{v_1}} = \sqrt{9^2+12^2} = 15 \label{eq6}\\
+    \vec{u_1} &= \frac{\vec{v_1}}{k_1} = \frac{1}{15}\myvec{9\\12} = \frac{1}{5}\myvec{3\\4}\\
+    r_1 &= \frac{\vec{u_1}^T\vec{v_2}}{\norm{\vec{u_1}}^2} = \frac{1}{5}\myvec{3&4}\myvec{12\\16}=20\\
+    \vec{u_2} &= \frac{\vec{v_2}-r_1\vec{u_1}}{\norm{\vec{v_2}-r_1\vec{u_1}}} = \myvec{0\\0}\\
+    k_2 &= \vec{u_2}^T\vec{v_2} = \myvec{0&0}\myvec{12\\16} = 0\label{eq7}
+\end{align}
+The equation \eqref{eq4} and \eqref{eq5} can be written as
+\begin{align}
+    \myvec{\vec{v_1}&\vec{v_2}} &= \myvec{\vec{u_1}&\vec{u_2}}\myvec{k_1&r_1\\0&k_2}\\
+    \myvec{\vec{v_1}&\vec{v_2}} &= \vec{QR}\label{eq8}
+    \intertext{where,}
+    \vec{Q} &= \myvec{\vec{u_1}&\vec{u_2}}\label{eq9}\\
+    \vec{R} &= \myvec{k_1&r_1\\0&k_2}\label{eq10}
+\end{align}
+Now $\vec{Q}$ should be an orthogonal matrix such that
+\begin{align}
+    \vec{Q}^T\vec{Q}=\vec{I}
+\end{align}
+Here, we see that the second column vector of $\vec{Q}$ is zero since the column vectors of $\vec{V}$ are dependent. Therefore we can write $\vec{Q}$ as
+\begin{align}
+    \vec{Q} &= \myvec{\frac{3}{5}\\\frac{4}{5}}
+\end{align}
+Therefore, for the given matrix $\vec{V}$, we can write $\vec{QR}$ decomposition as the product of respective row and column vectors as
+\begin{align}
+    \vec{V} &= \vec{QR}\\
+    \implies\myvec{9&12\\12&16} &= \myvec{\frac{3}{5}\\\frac{4}{5}}\myvec{15&20}
+\end{align}
+\subsection{Finding vertex $\vec{c}$ using SVD}
+
+\begin{align}
+    \vec{V} &= \myvec{9&12\\12&16}\label{eq13}\\
+    \vec{u} &= \myvec{-\frac{1}{2}\\-2}\\
+    f &= 7\\
+    \vec{P} &= \myvec{\vec{p_1}&\vec{p_2}} = \frac{1}{5}\myvec{-4&3\\3&4} \\
+    \eta &= 2\vec{p_1}^T\vec{u} = -\frac{8}{5}\label{eq14} 
+\end{align}
+And the expression for vertex $\vec{c}$ is given by
+\begin{align}
+    \myvec{\vec{u}^T+\eta\vec{p_1}^T\\\vec{V}}\vec{c}=\myvec{-f\\\eta\vec{p_1}-\vec{u}}\label{eq15}
+\end{align}
+Substituting values from \eqref{eq13} to \eqref{eq14} in equation \eqref{eq15} we get
+\begin{align}
+    \myvec{\frac{39}{50}&-\frac{74}{25}\\9&12\\12&16}\vec{c}=\myvec{-7\\\frac{89}{50}\\\frac{26}{25}}
+\end{align}
+This is of the form
+\begin{align}
+    \vec{Ac} &= \vec{b}\label{eq16}
+    \intertext{where}
+    \vec{A} &=  \myvec{\frac{39}{50}&-\frac{74}{25}\\9&12\\12&16}\label{eq17}\\
+    \vec{b} &= \myvec{-7\\\frac{89}{50}\\\frac{26}{25}}\label{eq18}
+\end{align}
+To solve \eqref{eq16} we perform Singular value decomposition of $\vec{A}$ as follows:
+\begin{align}
+    \vec{A} = \vec{U}\vec{S}\vec{V}^T\label{eq19}
+\end{align}
+where columns of $\vec{V}$ are eigenvectors of $\vec{A}^T\vec{A}$, columns of $\vec{U}$ are eigenvectors of $\vec{A}\vec{A}^T$ and $\vec{S}$ is diagonal matrix of the square roots of eigen values of $\vec{A}^T\vec{A}$. Substituting $\eqref{eq19}$ in $\eqref{eq16}$ we get
+\begin{align}
+    \vec{U}\vec{S}\vec{V}^T\vec{c} &= \vec{b}\\
+    \implies\vec{c} &= \vec{V}\vec{S}_+\vec{U}^T\vec{b}\label{eq25} 
+\end{align}
+Where $\vec{S}_+$ is the Moore-Penrose pseudo-Inverse of $\vec{S}$.Now using \eqref{eq17} we get
+\begin{align}
+    \vec{A}\vec{A}^T &= \myvec{\frac{937}{100}&-\frac{57}{2}&-38\\-\frac{57}{2}&225&300\\-38&300&400}\\
+    \vec{A}^T\vec{A} &= \myvec{\frac{564021}{2500}&\frac{186057}{625}\\\frac{186057}{625}&\frac{255476}{625}}
+\end{align}
+Eigen values of $\vec{A}\vec{A}^T$ can be found as
+\begin{align}
+    \mydet{\vec{A}\vec{A}^T-\lambda\vec{I}} &= 0\\
+    \implies\mydet{\frac{937}{100}-\lambda&-\frac{57}{2}&-38\\-\frac{57}{2}&225-\lambda&300\\-38&300&400-\lambda} &= 0\\
+    \implies-\lambda^3+\frac{63437}{100}\lambda^2-3600\lambda&=0\label{eq20}
+\end{align}
+Solving \eqref{eq20} we get
+\begin{align}
+    \lambda_1 &= \frac{63437+\sqrt{3880252969}}{200}\\
+    \implies\lambda_1 &= 628.6434\\
+    \lambda_2 &= \frac{63437-\sqrt{3880252969}}{200}\\
+    \implies\lambda_2 &= 5.7266\\
+    \lambda_3 &= 0
+\end{align}
+The normalized eigenvectors corresponding to these eigenvalues are
+\begin{align}
+    \vec{u}_1 = \myvec{-0.07648\\0.59823\\0.79764}\\ \vec{u}_2 = \myvec{0.99707\\0.04589\\0.06118}\\ \vec{u}_3 = \myvec{0\\-0.8\\0.6}
+\end{align}
+Hence we obtain $\vec{U}$ of \eqref{eq19} as
+\begin{align}
+    \vec{U} = \myvec{-0.07648&0.99707&0\\0.59823&0.04589&-0.8\\0.79764&0.06118&0.6}\label{eq21}
+\end{align}
+Similarly eigen values of $\vec{A}^T\vec{A}$ can be found as
+\begin{align}
+    \mydet{\vec{A}^T\vec{A}-\lambda\vec{I}} &= 0\\
+    \implies\mydet{\frac{564021}{2500}-\lambda&\frac{186057}{625}\\\frac{186057}{625}&\frac{255476}{625}-\lambda}&=0\\
+    \implies\lambda^2-\frac{63437}{100}\lambda+3600&=0\label{eq22}
+\end{align}
+Solving \eqref{eq22} we get
+\begin{align}
+    \lambda_4 &= \frac{63437+\sqrt{3880252969}}{200}\\
+    \implies\lambda_4 &= 628.6434\\
+    \lambda_5 &= \frac{63437-\sqrt{3880252969}}{200}\\
+    \implies\lambda_5 &= 5.7266
+\end{align}
+The normalized eigenvectors corresponding to these eigenvalues are
+\begin{align}
+    \vec{v}_1 &= \myvec{0.59412\\0.80437}\\
+    \vec{v}_2 &= \myvec{0.80438\\-0.59412}
+\end{align}
+Hence we obtain $\vec{V}$ of \eqref{eq19} as
+\begin{align}
+    \vec{V} = \myvec{0.59412&0.80437\\0.80437&-0.59412}\label{eq23}
+\end{align}
+$\vec{S}$ of equation \eqref{eq19} corresponding to $\lambda_4$,$\lambda_5$ is
+\begin{align}
+    \vec{S} &= \myvec{\sqrt{628.6434}&0\\0&\sqrt{5.7266}\\0&0}\\
+    \implies\vec{S} &= \myvec{25.07276&0\\0&2.39303\\0&0}
+\end{align}
+Moore-Penrose Pseudo-Inverse of $\vec{S}$ is given by
+\begin{align}
+    \vec{S}_+ &= \myvec{\frac{1}{25.07276}&0&0\\0&\frac{1}{2.39303}&0}\\
+    \vec{S}_+ &= \myvec{0.03988&0&0\\0&0.41788&0}\label{eq24}
+\end{align}
+Now using values from $\eqref{eq21}$, $\eqref{eq23}$, $\eqref{eq24}$, $\eqref{eq18}$ in $\eqref{eq25}$ we get
+\begin{align}
+    \vec{U}^T\vec{b} &= \myvec{2.429755\\-6.834179\\-0.8}\\
+    \vec{S}_+\vec{U}^T\vec{b} &= \myvec{0.096899\\-2.855867}\\
+    \vec{c} = \vec{V}\vec{S}_+\vec{U}^T\vec{b} &= \myvec{-2.2396\\1.7747}
+\end{align}
+Verifying this solution using least squares,
+\begin{align}
+    \vec{A}^T\vec{A}\vec{c} &= \vec{A}^T\vec{b}
+\end{align}
+Substituting the values from equations $\eqref{eq17}$ and $\eqref{eq18}$ here, we get
+\begin{align}
+    \myvec{\frac{564021}{2500}&\frac{186057}{625}\\\frac{186057}{625}&\frac{255476}{625}}\vec{c} &= \myvec{\frac{576}{25}\\\frac{1468}{25}}
+\end{align}
+Solving the augmented matrix
+\begin{align}
+    \myvec{\frac{564021}{2500}&\frac{186057}{625}&\frac{576}{25}\\\frac{186057}{625}&\frac{255476}{625}&\frac{1468}{25}}\xleftrightarrow[]{R_1\leftarrow \frac{2500}{564021}R_1}\myvec{1&\frac{744228}{564021}&\frac{57600}{564021}\\\frac{186057}{625}&\frac{255476}{625}&\frac{1468}{25}}\\
+    \xleftrightarrow[]{R_2\leftarrow R_2-\frac{186057}{625}R_1}{}\myvec{1&\frac{744228}{564021}&\frac{57600}{564021}\\0&\frac{9000000}{564021}&\frac{15972300}{564021}}\\
+    \xleftrightarrow[]{R_2\leftarrow \frac{564021}{9000000}R_2}{}\myvec{1&\frac{744228}{564021}&\frac{57600}{564021}\\0&1&\frac{17747}{10000}}\\
+    \xleftrightarrow[]{R_1\leftarrow R_1-\frac{744228}{564021}R_2}{}\myvec{1&0&-\frac{22396}{10000} \\0&1&\frac{17747}{10000}}
+\end{align}
+Therefore
+\begin{align}
+    \vec{c} = \myvec{-\frac{22396}{10000}\\\frac{17747}{10000}}=\myvec{-2.2396\\1.7747}
+\end{align}
+Hence, verified
+\end{document}
